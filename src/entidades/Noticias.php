@@ -1,5 +1,5 @@
 <?php
-class Noticias
+class Noticias implements InterfaceCrud
 {
     private $idnoticia;
     private $titulo;
@@ -86,6 +86,20 @@ class Noticias
     public function getIdadminApioadoFK()
     {
         return $this->idadminApioadoFK;
+    }
+
+    //Crud
+    public function salvar()
+    {
+    }
+    public function listar()
+    {
+    }
+    public function editar()
+    {
+    }
+    public function deletar()
+    {
     }
 }
 ?>

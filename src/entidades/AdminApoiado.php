@@ -1,5 +1,5 @@
 <?php
-class AdminApoiado
+class AdminApoiado implements InterfaceCrud
 {
     private $idadminApioado;
     private $nomeCompleto;
@@ -100,6 +100,20 @@ class AdminApoiado
         $this->email = $email;
 
         return $this;
+    }
+    //Crud
+
+    public function salvar()
+    {
+    }
+    public function listar()
+    {
+    }
+    public function editar()
+    {
+    }
+    public function deletar()
+    {
     }
 }
 
