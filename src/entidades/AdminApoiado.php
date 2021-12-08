@@ -178,7 +178,7 @@ class AdminApoiado extends conexao implements InterfaceCrud
         $resultado = $conn->prepare($inserindoUsuario);
         $resultado->execute();
         if ($resultado->rowCount()) {
-            echo "<br>deletado atualizado com sucesso!";
+            echo "<br> deletado atualizado com sucesso!";
         } else {
             echo "<br>nao foi atualizado";
         }

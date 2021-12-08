@@ -1,5 +1,5 @@
 <?php
-class Noticias implements InterfaceCrud
+class Noticias extends conexao implements InterfaceCrud
 {
     private $idnoticia;
     private $titulo;
@@ -91,15 +91,19 @@ class Noticias implements InterfaceCrud
     //Crud
     public function salvar()
     {
+        $conn = $this->connectar();
     }
     public function listar($id)
     {
+        $conn = $this->connectar();
     }
     public function editar($id)
     {
+        $conn = $this->connectar();
     }
     public function deletar($id)
     {
+        $conn = $this->connectar();
     }
 }
 ?>
