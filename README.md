@@ -1,5 +1,5 @@
 
-![Screenshot](https://github.com/ifeslopes/PI_RegiaoNews/blob/main/g7119.png)
+![Screenshot](https://github.com/ifeslopes/PI_RegiaoNews-main/blob/master/g7119.png)
 ## Resumo
 	
 
