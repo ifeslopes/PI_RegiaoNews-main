@@ -92,13 +92,13 @@ class Noticias implements InterfaceCrud
     public function salvar()
     {
     }
-    public function listar()
+    public function listar($id)
     {
     }
-    public function editar()
+    public function editar($id)
     {
     }
-    public function deletar()
+    public function deletar($id)
     {
     }
 }

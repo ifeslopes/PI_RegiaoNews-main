@@ -34,8 +34,13 @@ echo " data: " . $noticia->getData();
 echo " iddoaltor: " . $noticia->getIdadminApioadoFK();
 echo "<br>";
 
-$pessoa->setNomeCompleto("Luis");
+$pessoa->setNomeCompleto("JULIOANA");
 $noticia->setTitulo("Novo titulo");
 echo "nome:" . $pessoa->getNomeCompleto();
 echo "<br>";
 echo "Titulo: " . $noticia->getTitulo();
+$id = "ifes.lopes@gmail.com";
+echo "<br>RETURNO:" . $pessoa->listar($id);
+$pessoa->deletar(7);
+//echo "<br>ATUALIZADO:" . $pessoa->editar($id);
+//echo "nome: " . $pessoa->getNomeCompleto();
