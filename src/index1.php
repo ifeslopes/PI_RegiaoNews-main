@@ -14,7 +14,7 @@ $noticia = new Noticias(
     "primeria",
     "texto completo do primiro",
     "foto.jpg",
-    "1/12/2021",
+    date("Y-m-d"),
     1
 );
 
@@ -38,9 +38,11 @@ $pessoa->setNomeCompleto("JULIOANA");
 $noticia->setTitulo("Novo titulo");
 echo "nome:" . $pessoa->getNomeCompleto();
 echo "<br>";
-echo "Titulo: " . $noticia->getTitulo();
+echo "Titulo: " . $noticia->getTitulo() . "<br>";
 $id = "ifes.lopes@gmail.com";
-echo "<br>RETURNO:" . $pessoa->listar($id);
-$pessoa->deletar(7);
+$ni = 4;
+$noticia->deletar($ni);
+//echo "<br>RETURNO:" . $pessoa->listar($id);
+//$pessoa->deletar(7);
 //echo "<br>ATUALIZADO:" . $pessoa->editar($id);
 //echo "nome: " . $pessoa->getNomeCompleto();
