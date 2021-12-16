@@ -1,0 +1,1 @@
+esta e uma segunda pagina relacionado noticias no mesmo controle

@@ -12,7 +12,7 @@ $pessoa = new AdminApoiado(
     "teste.jpg"
 );
 $noticia = new Noticias(
-    "primeira notica de extenção",
+    "primeira notica de extenção novoteste inserri",
     "primeria classe",
     "texto completo do primiro testando classe",
     "foto231.jpg",
@@ -38,13 +38,13 @@ echo "<br>";
 
 $servico = new ServicoNoticia();
 $oi;
-//$servico->salvar($noticia);
+$servico->salvar($noticia);
 $servico->listar($oi);
 //$noticia->setTitulo("Novo titulo Classe tesetetetetete");
 //$servico->editar($noticia, 5);
-$servico->deletar(5);
+//$servico->deletar(5);
 echo "<br>atulaziado!";
-$servico->listar($oi);
+//$servico->listar($oi);
 /*$pessoa->setNomeCompleto("JULIOANA");
 $noticia->setTitulo("Novo titulo");
 echo "nome:" . $pessoa->getNomeCompleto();
