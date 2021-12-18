@@ -25,6 +25,15 @@ class noticiasController extends Controller
         $this->carregarTemplate('news',$dados);
 
     }
+    public function inserindonews(){
+
+       
+      
+        $this->carregarTemplate('inserindonews');
+
+    }
+
+    /*
     public function futebol ($id_noticia){
           $n = new Noticias();
         $dados = $n->getNoticiasPorId($id_noticia);
@@ -36,4 +45,5 @@ class noticiasController extends Controller
         $this->carregarTemplate('futebol', $dados);
 
     }
+    */
 }

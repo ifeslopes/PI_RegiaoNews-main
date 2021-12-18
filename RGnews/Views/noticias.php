@@ -15,10 +15,13 @@
  <?php
     }
     ?>
-  
+
+  <a href="<?php echo 'noticias/inserindonews';?>" class="button">Link Button</a>
 </div>
 
+
 <?php
+
 echo'<pre>';
 print_r($this->dados2);
 echo'<pre>';
