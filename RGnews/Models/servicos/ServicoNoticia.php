@@ -1,15 +1,21 @@
 <?php
-include_once "conexao.php";
-include_once "./Models/entidades/InterfaceCrud.php";
+require_once 'Conexao.php';
+require_once '../RGnews/Models/entidades/InterfaceCrud.php';
+
 
 class ServicoNoticia implements InterfaceCrud
 {
-    public function __construct(){}
+    private $con;
+
+    public function __construct(){
+
+        $this->con = Conexao::getConexao();
+
+    }
 
     
     public function salvar(Noticias $noticias){
-            $conexao = new Conexaonew();
-            $conn = $conexao->connectar();
+            
 
             $titulo = $noticias->getTitulo();
             $textoDestaque = $noticias->getTextoDestaque();
@@ -28,7 +34,7 @@ class ServicoNoticia implements InterfaceCrud
             ' $data',
             '$idadminApioadoFK' )";
 
-            $resultado = $conn->prepare($inserindoNoticia);
+            $resultado = $this->con->prepare($inserindoNoticia);
             $resultado->execute();
 
             if ($resultado->rowCount()) {
@@ -41,13 +47,12 @@ class ServicoNoticia implements InterfaceCrud
         public function listar()
         {
             
-            $conexao = new Conexaonew();
-            $conn = $conexao->connectar();
+           
             $dados = array();
 
             $listandoUsuario = "SELECT * FROM noticias ORDER BY dataNoticia Desc;";
                 
-            $resultado = $conn->query($listandoUsuario);
+            $resultado = $this->con->query($listandoUsuario);
             
 
             
@@ -60,13 +65,12 @@ class ServicoNoticia implements InterfaceCrud
 
          public function listarID($idadminApioadoFK){
 
-             $conexao = new Conexaonew();
-            $conn = $conexao->connectar();
+         
             $dados = array();
             
             $listandoUsuario = "SELECT * FROM noticias WHERE idnoticias='$idadminApioadoFK';";
                 
-            $resultado = $conn->query($listandoUsuario);
+            $resultado = $this->con->query($listandoUsuario);
             
 
             
@@ -78,10 +82,9 @@ class ServicoNoticia implements InterfaceCrud
             //"SELECT * FROM noticias WHERE adminApoiadoFK='$idadminApioadoFK';";
 
          }
-    public function editar(Noticias $noticias, $id)
+    public function editar( $noticias, $id)
         {
-            $conexao = new Conexaonew();
-            $conn = $conexao->connectar();
+           
 
             $titulo = $noticias->getTitulo();
             $textoDestaque = $noticias->getTextoDestaque();
@@ -98,8 +101,8 @@ class ServicoNoticia implements InterfaceCrud
             dataNoticia='$data', 
             adminApoiadoFK='$idadminApioadoFK' WHERE idnoticias ='$id' ";
 
-            $resultado = $conn->prepare($editandoNoticia);
-            $resultado->execute();
+            $resultado = $this->con->query($editandoNoticia);
+            
             if ($resultado->rowCount()) {
                 echo "<br>Noticia atualizado com sucesso!";
             } else {
@@ -112,14 +115,13 @@ class ServicoNoticia implements InterfaceCrud
     
             public function deletar($id)
             {
-            $conexao = new conexao();
-            $conn = $conexao->connectar();
+           
 
             $deletaNoticias = "DELETE  FROM noticias
             WHERE idnoticias ='$id' ";
 
-            $resultado = $conn->prepare($deletaNoticias);
-            $resultado->execute();
+            $resultado = $this->con->query($deletaNoticias);
+           
             if ($resultado->rowCount()) {
                 echo "<br> deletado atualizado com sucesso!";
             } else {

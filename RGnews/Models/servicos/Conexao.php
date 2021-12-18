@@ -6,7 +6,7 @@ private function __construct(){
 }
     public static function getConexao(){
         if(!isset(self::$intancia)){
-            $dbname = 'aula5_mvc';
+            $dbname = 'regiaonews';
             $host = 'localhost';
             $user= 'root';
             $senha= '';

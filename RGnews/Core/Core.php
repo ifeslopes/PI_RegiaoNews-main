@@ -9,7 +9,7 @@ class Core
     {
         $parametros = array();
         if (isset($_GET["pag"])) {
-            $url = $_GET["pag"];
+            $url = addslashes( $_GET["pag"]);
         }
 
         //possoui informação apos dominio wwww.sitex.com/clesse/funcao/parametro

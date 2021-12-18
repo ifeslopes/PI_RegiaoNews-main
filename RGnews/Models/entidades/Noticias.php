@@ -1,6 +1,5 @@
 <?php
-include_once "InterfaceCrud.php";
-include_once "conexao.php";
+
 class Noticias
 {
     private $idnoticia;
