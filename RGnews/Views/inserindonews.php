@@ -22,51 +22,27 @@
     
 </body>
 </html>
-<?php
-if(isset($_POST['name'])){
-    $titulo = $_POST['name'];
-    $textoDestaque = $_POST['textodestaque'];
-    $textoCompleto = $_POST['textocompleto'];
-     $nome_arquivo ;
-    $data  =  date("Y-m-d");
-    $idadminApioadoFK=1;
-    
-    //------------------------------
 
-    if($_FILES['foto']['type'] == 'image/png')
-    {
-         $nome_arquivo = md5($_FILES['foto']['name'].rand(1,99)).'.png';
-         if(isset($_FILES['foto']))
-            {
-                move_uploaded_file( $_FILES['foto']['tmp_name'], 'Media/'.$nome_arquivo);
-                echo 'imagem enviada com sucesso!';
-            }
-    }
-    elseif($_FILES['foto']['type'] == 'image/jpeg'){
+<?php if (isset($_POST["name"])) {
+    $titulo = $_POST["name"];
+    $textoDestaque = $_POST["textodestaque"];
+    $textoCompleto = $_POST["textocompleto"];
+    $nome_arquivo;
+    $data = date("Y-m-d");
+    $idadminApioadoFK = 1;
 
-
-        $nome_arquivo = md5($_FILES['foto']['name'].rand(1,99)).'.jpg';
-
-        if(isset($_FILES['foto']))
-            {
-                move_uploaded_file( $_FILES['foto']['tmp_name'], 'Media/'.$nome_arquivo);
-                echo 'imagem enviada com sucesso!';
-            }
-    }
-    else{
-        echo"só e possivel enviar arquivos jpg e png!";
-        exit;
-    }
-    //-------------------------------------
-
-    if(isset($_FILES['foto']))
-    {
-        move_uploaded_file( $_FILES['foto']['tmp_name'], 'Media/'.$nome_arquivo);
-        echo 'emagigem enviada com sucesso!';
-    }
+    $imgobjeto = new RetornoImage($_FILES["foto"]);
+    $foto = $imgobjeto->getNomeimage();
+    $noticia = new Noticias(
+        $titulo,
+        $textoDestaque,
+        $textoCompleto,
+        $foto,
+        $data,
+        $idadminApioadoFK
+    );
+    $inserido = new ServicoNoticia();
+    $inserido->salvar($noticia);
 }
-$noticia = new Noticias($titulo,$textoDestaque,$textoCompleto,$nome_arquivo,$data,$idadminApioadoFK);
-$inserido= new ServicoNoticia();
-$inserido->salvar($noticia);
 
 ?>
