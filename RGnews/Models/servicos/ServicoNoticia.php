@@ -63,12 +63,12 @@ class ServicoNoticia implements InterfaceCrud
         }
            
 
-         public function listarID($idadminApioadoFK){
+         public function listarID($id){
 
          
             $dados = array();
             
-            $listandoUsuario = "SELECT * FROM noticias WHERE idnoticias='$idadminApioadoFK';";
+            $listandoUsuario = "SELECT * FROM noticias WHERE idnoticias='$id';";
                 
             $resultado = $this->con->query($listandoUsuario);
             
@@ -82,7 +82,7 @@ class ServicoNoticia implements InterfaceCrud
             //"SELECT * FROM noticias WHERE adminApoiadoFK='$idadminApioadoFK';";
 
          }
-    public function editar( $noticias, $id)
+    public function editar( Noticias $noticias, $id)
         {
            
 

@@ -12,11 +12,13 @@
         <h4><?php echo $this->dados2[$i]['dataNoticia'];?></h4>
     </div>
    </a>
+   <br>
+    <a href="<?php echo 'noticias/editandonews/'. $this->dados2[$i]['idnoticias'];?>" class="button">Editar</a>
  <?php
     }
     ?>
 
-  <a href="<?php echo 'noticias/inserindonews';?>" class="button">Link Button</a>
+  <a href="<?php echo 'noticias/inserindonews' ;?>" class="button">Link Button</a>
 </div>
 
 

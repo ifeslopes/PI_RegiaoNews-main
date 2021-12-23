@@ -32,6 +32,18 @@ class noticiasController extends Controller
         $this->carregarTemplate('inserindonews');
 
     }
+    public function editandonews($id){
+
+         $n = new ServicoNoticia();
+         $dados = $n->listarID($id);
+           echo '<pre>';
+        print_r($dados);
+        echo '</pre>';
+        
+      
+        $this->carregarTemplate('editandonews',$dados);
+
+    }
 
     /*
     public function futebol ($id_noticia){
