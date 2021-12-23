@@ -44,6 +44,15 @@ class noticiasController extends Controller
         $this->carregarTemplate('editandonews',$dados);
 
     }
+    public function deletandonews($id){
+
+        $n = new ServicoNoticia();
+         $dados = $n->deletar($id);
+        
+      
+        $this->carregarTemplate('noticias');
+
+    }
 
     /*
     public function futebol ($id_noticia){
