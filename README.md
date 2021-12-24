@@ -19,5 +19,9 @@ Essas estão sendo as linguagem  e ferramentas utilizadas para desenvolvimento d
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" align="center" heigth="50" width="60">
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" align="center" heigth="50" width="60">
-</div
+	
+</div>
 
+## [OBS:]
+
+### ignore as paginas views, no momento só estou trabalhando no back-end essas viwes só estão para teste, estilização e organização 0.
