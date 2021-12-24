@@ -13,13 +13,15 @@
     </div>
    </a>
    <br>
+   <div>
     <a href="<?php echo 'noticias/editandonews/'. $this->dados2[$i]['idnoticias'];?>" class="button">Editar</a>
     <a href="<?php echo 'noticias/deletandonews/'. $this->dados2[$i]['idnoticias'];?>" class="button1">Deletar</a>
+   </div>
  <?php
     }
     ?>
 
-  <a href="<?php echo 'noticias/inserindonews' ;?>" class="button">Link Button</a>
+  <a href="<?php echo 'noticias/inserindonews' ;?>" class="button">Criar Noticia</a>
 </div>
 
 
