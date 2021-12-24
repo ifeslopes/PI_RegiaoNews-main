@@ -1,39 +1,38 @@
 <?php
-class noticiasController extends Controller
+class adminApoiadoController extends Controller
 {
     public function index()
     {
         //1) chamar um model
        
-        $n = new ServicoNoticia();
+        $n = new ServicoAdminApoiado();
         $dados = $n->listar();
+
         //2) chamar uma Viwes
         //3) fazer  a junção de back end  com front end
-         echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
-        exit;
+       
+   
       
 
-        $this->carregarTemplate('noticias', array(),$dados);
+        $this->carregarTemplate('adminApoiado', array(),$dados);
     }
 
-    public function news($id_noticia){
+    public function biografia($id_noticia){
 
-        $n = new ServicoNoticia();
+        $n = new ServicoAdminApoiado();
         $dados = $n->listarID($id_noticia);
         echo '<pre>';
         print_r($dados);
         echo '</pre>';
       
-        $this->carregarTemplate('news',$dados);
+        $this->carregarTemplate('biografia',$dados);
 
     }
-    public function inserindonews(){
+    public function inserindousuario(){
 
        
       
-        $this->carregarTemplate('inserindonews');
+        $this->carregarTemplate('inserindousuario');
 
     }
     public function editandonews($id){

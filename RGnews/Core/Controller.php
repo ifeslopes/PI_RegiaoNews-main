@@ -17,10 +17,10 @@ class Controller
 
     public function carregarViewNoTemplate($nomeView, $dadosModel = array())
     {
-        $view = "Views/" . $nomeView . ".php";
+       
     
         extract($dadosModel);   
-        require $view;
+        require "Views/" . $nomeView . ".php";
        
         
     }
