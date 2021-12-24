@@ -14,7 +14,7 @@ class ServicoNoticia implements InterfaceCrud
     }
 
     
-    public function salvar(Noticias $noticias){
+    public function salvar($noticias){
             
 
             $titulo = $noticias->getTitulo();
@@ -82,7 +82,7 @@ class ServicoNoticia implements InterfaceCrud
             //"SELECT * FROM noticias WHERE adminApoiadoFK='$idadminApioadoFK';";
 
          }
-    public function editar( Noticias $noticias, $id)
+    public function editar( $noticias, $id)
         {
            
 
