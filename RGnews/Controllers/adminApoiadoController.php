@@ -35,39 +35,28 @@ class adminApoiadoController extends Controller
         $this->carregarTemplate('inserindousuario');
 
     }
-    public function editandonews($id){
+    public function editandousuario($id){
 
-         $n = new ServicoNoticia();
+         $n = new ServicoAdminApoiado;
          $dados = $n->listarID($id);
            echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
+            print_r($dados);
+            echo '</pre>';
+            
         
       
-        $this->carregarTemplate('editandonews',$dados);
+        $this->carregarTemplate('editandousuario',$dados);
 
     }
-    public function deletandonews($id){
+    public function deletandousuario($id){
 
-        $n = new ServicoNoticia();
+        $n = new ServicoAdminApoiado();
          $dados = $n->deletar($id);
         
       
-        $this->carregarTemplate('noticias');
+       /// $this->carregarTemplate('noticias');
 
     }
 
-    /*
-    public function futebol ($id_noticia){
-          $n = new Noticias();
-        $dados = $n->getNoticiasPorId($id_noticia);
-        echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
-      
-      
-        $this->carregarTemplate('futebol', $dados);
-
-    }
-    */
+    
 }

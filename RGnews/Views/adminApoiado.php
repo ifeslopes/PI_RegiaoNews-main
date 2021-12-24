@@ -14,8 +14,8 @@
    </a>
    <br>
    <div>
-    <a href="<?php echo 'noticias/editandonews/'. $this->dados2[$i]['idnoticias'];?>" class="button">Editar</a>
-    <a href="<?php echo 'noticias/deletandonews/'. $this->dados2[$i]['idnoticias'];?>" class="button1">Deletar</a>
+    <a href="<?php echo 'adminApoiado/editandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>" class="button">Editar</a>
+    <a href="<?php echo 'adminApoiado/deletandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>" class="button1">Deletar</a>
    </div>
  <?php
     }
