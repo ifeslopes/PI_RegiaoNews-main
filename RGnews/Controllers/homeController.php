@@ -9,4 +9,17 @@ class homeController extends Controller
 
         $this->carregarTemplate('home');
     }
+     public function login(){
+
+
+        $this->carregarTemplate('login');
+
+     }
+
+     public function sair(){
+
+
+        $this->carregarTemplate('sair');
+
+     }
 }

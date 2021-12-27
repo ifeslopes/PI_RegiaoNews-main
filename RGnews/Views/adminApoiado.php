@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+$tipoUsuario =1;
+
+  if($_SESSION['tipoUsuario'] != $tipoUsuario || !isset($_SESSION['idAdminApoiado']))
+    {
+      echo $_SESSION['tipoUsuario'];
+     
+      header("location: home/login");
+      exit;
+    }
+
+?>
 <div class='noticias'>
     <?php 
     for($i=0; $i < count($this->dados2);$i++) {
@@ -22,10 +36,12 @@
     ?>
 
   <a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">Criar Noticia</a>
+  <a href="<?php echo 'home/sair' ;?>" class="button">Sair</a>
 </div>
 
 
 <?php
+echo $_SESSION['tipoUsuario'];
 
 echo'<pre>';
 print_r($this->dados2);

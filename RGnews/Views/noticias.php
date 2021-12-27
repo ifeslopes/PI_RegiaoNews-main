@@ -1,3 +1,13 @@
+<?php
+session_start();
+echo $_SESSION['idAdminApoiado'];
+if(!isset($_SESSION['idAdminApoiado']))
+{
+    header("location: home/login");
+    exit;
+}
+?>
+
 <div class='noticias'>
     <?php 
     for($i=0; $i < count($this->dados2);$i++) {
@@ -22,10 +32,12 @@
     ?>
 
   <a href="<?php echo 'noticias/inserindonews' ;?>" class="button">Criar Noticia</a>
+  <a href="<?php echo 'home/sair' ;?>" class="button">Sair</a>
 </div>
 
 
 <?php
+echo $_SESSION['id_usuario'];
 
 echo'<pre>';
 print_r($this->dados2);

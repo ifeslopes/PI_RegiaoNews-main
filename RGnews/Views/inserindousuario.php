@@ -7,6 +7,7 @@
     <title>Nova noticia</title>
 </head>
 <body>
+    <div id="corpo-form-cad">
     <h1>inserindo USUARIO teste</h1>
     <form action="" method="post" enctype="multipart/form-data">
         <label>NOME COMPLETO</label>
@@ -28,6 +29,7 @@
         
         <input type="submit" >
     </form>
+</div>
     
 </body>
 </html>

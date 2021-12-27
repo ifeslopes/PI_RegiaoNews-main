@@ -9,10 +9,7 @@ class noticiasController extends Controller
         $dados = $n->listar();
         //2) chamar uma Viwes
         //3) fazer  a junção de back end  com front end
-         echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
-        exit;
+       
       
 
         $this->carregarTemplate('noticias', array(),$dados);
@@ -22,9 +19,7 @@ class noticiasController extends Controller
 
         $n = new ServicoNoticia();
         $dados = $n->listarID($id_noticia);
-        echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
+       
       
         $this->carregarTemplate('news',$dados);
 

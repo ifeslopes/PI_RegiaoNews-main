@@ -7,6 +7,7 @@
     <title>Nova noticia</title>
 </head>
 <body>
+    <div id="corpo-form-cad">
     <h1>inserindonews teste</h1>
     <form action="" method="post" enctype="multipart/form-data">
         <label>NOME</label>
@@ -19,6 +20,7 @@
         
         <input type="submit" >
     </form>
+</div>
     
 </body>
 </html>
