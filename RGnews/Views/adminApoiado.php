@@ -30,14 +30,16 @@ $tipoUsuario =1;
    <div>
     <a href="<?php echo 'adminApoiado/editandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>" class="button">Editar</a>
     <a href="<?php echo 'adminApoiado/deletandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>" class="button1">Deletar</a>
+    <br>
+    <a href="<?php echo 'adminApoiado/newsapoiado/'. $this->dados2[$i]['idAdminApoiado'];?>" class="button1">Noticias Postadas</a>
    </div>
  <?php
     }
     ?>
 
-  <a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">Criar Noticia</a>
-  <a href="<?php echo 'home/sair' ;?>" class="button">Sair</a>
 </div>
+<a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">Criar Noticia</a>
+<a href="<?php echo 'home/sair' ;?>" class="button">Sair</a>
 
 
 <?php

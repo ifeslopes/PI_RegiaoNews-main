@@ -7,7 +7,10 @@ class homeController extends Controller
         //2) chamar uma Viwes
         //3) fazer  a junção de back end  com front end
 
-        $this->carregarTemplate('home');
+        $n = new ServicoNoticia();
+        $dados = $n->listar();
+
+        $this->carregarTemplate('home',array(), $dados);
     }
      public function login(){
 

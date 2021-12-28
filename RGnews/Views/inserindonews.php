@@ -1,3 +1,7 @@
+<?php
+session_start();
+echo $_SESSION['idAdminApoiado'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +35,7 @@
     $textoCompleto = $_POST["textocompleto"];
     $nome_arquivo;
     $data = date("Y-m-d");
-    $idadminApioadoFK = 1;
+    $idadminApioadoFK = $_SESSION['idAdminApoiado'];
 
     $imgobjeto = new RetornoImage($_FILES["foto"]);
     $foto = $imgobjeto->getNomeimage();

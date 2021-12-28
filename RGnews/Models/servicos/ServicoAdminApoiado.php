@@ -72,6 +72,26 @@ class ServicoAdminApoiado implements InterfaceCrud
                 return $dados;
 
     }
+
+
+     public function listarNoticiaApoiado($id){
+
+         $dados = array();
+            
+            $listandoUsuario = "SELECT nt.* FROM adminApoiado admapd JOIN noticias nt 
+            ON(admapd.idAdminApoiado = nt.adminApoiadoFK)
+            WHERE admapd.idAdminApoiado='$id';";
+                
+            $resultado = $this->con->query($listandoUsuario);
+            
+
+            
+               $dados = $resultado->fetchAll(PDO::FETCH_ASSOC);
+                    
+                
+                return $dados;
+
+    }
     public function editar($adminApoiado, $id)
     {
         

@@ -4,6 +4,6 @@ unset($_SESSION['idAdminApoiado']);
 
 
 
-header("location:home")
+header("location:../home")
 
 ?>
