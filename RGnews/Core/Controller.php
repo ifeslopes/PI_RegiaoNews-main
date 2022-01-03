@@ -15,7 +15,7 @@ class Controller
         require "Views/template.php";
     }
 
-    public function carregarViewNoTemplate($nomeView, $dadosModel = array())
+    public function carregarViewNoTemplate($nomeView, $dadosModel = array(), $dados2=array())
     {
        
     

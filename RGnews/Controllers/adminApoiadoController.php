@@ -21,9 +21,7 @@ class adminApoiadoController extends Controller
 
         $n = new ServicoAdminApoiado();
         $dados = $n->listarID($id_noticia);
-        echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
+       
       
         $this->carregarTemplate('biografia',$dados);
 
@@ -39,9 +37,7 @@ class adminApoiadoController extends Controller
 
          $n = new ServicoAdminApoiado;
          $dados = $n->listarID($id);
-           echo '<pre>';
-            print_r($dados);
-            echo '</pre>';
+       
             
         
       
@@ -52,9 +48,7 @@ class adminApoiadoController extends Controller
 
          $n = new ServicoAdminApoiado;
          $dados = $n->listarNoticiaApoiado($id);
-           echo '<pre>';
-            print_r($dados);
-            echo '</pre>';
+           
             
             
         
@@ -73,6 +67,8 @@ class adminApoiadoController extends Controller
        /// $this->carregarTemplate('noticias');
 
     }
+
+   
 
     
 }

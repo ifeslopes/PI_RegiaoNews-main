@@ -15,7 +15,7 @@ public function loga($email, $senha)
     {
         
         //verificar se email e senha estão cadastrados, se  sim
-        $sqp = $this->con->prepare("SELECT idAdminApoiado, nomeCompleto,email,adminstrador  FROM adminApoiado WHERE email= '$email' AND senha = '$senha'");
+        $sqp = $this->con->prepare("SELECT idAdminApoiado, nomeCompleto,email,adminstrador,foto  FROM adminApoiado WHERE email= '$email' AND senha = '$senha'");
         $sqp->execute();
         if($sqp->rowCount()> 0)
         {
@@ -25,6 +25,7 @@ public function loga($email, $senha)
             $_SESSION['idAdminApoiado'] = $dado['idAdminApoiado'];
             $_SESSION['tipoUsuario'] = $dado['adminstrador'];
             $_SESSION['nome'] = $dado['nomeCompleto'];
+            $_SESSION['foto'] = $dado['foto'];
         
            
            
@@ -32,8 +33,13 @@ public function loga($email, $senha)
         }
         else
         {
+             session_start();
+                        $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+                           A simple danger alert—check it out!
+                          </div>';
 
-            return false;        }
+            return false;     
+           }
        
        
         //caso não cadastrado

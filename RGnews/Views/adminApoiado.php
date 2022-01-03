@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 $tipoUsuario =1;
 
@@ -7,7 +7,7 @@ $tipoUsuario =1;
     {
       echo $_SESSION['tipoUsuario'];
      
-      header("location: home/login");
+      header("location: home");
       exit;
     }
 

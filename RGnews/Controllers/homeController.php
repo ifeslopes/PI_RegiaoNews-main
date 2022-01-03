@@ -25,4 +25,15 @@ class homeController extends Controller
         $this->carregarTemplate('sair');
 
      }
+
+       public function sobre(){
+         
+
+         $n = new ServicoAdminApoiado();
+        $dados = $n->listar();
+       
+
+           $this->carregarTemplate('sobre',array(),$dados);
+
+     }
 }

@@ -1,11 +1,12 @@
 <?php
-session_start();
+/*
 echo $_SESSION['idAdminApoiado'];
 if(!isset($_SESSION['idAdminApoiado']))
 {
     header("location: home/login");
     exit;
 }
+*/
 ?>
 
 <div class='noticias'>
@@ -16,7 +17,7 @@ if(!isset($_SESSION['idAdminApoiado']))
 
        
     <div>
-        <img src="<?php echo 'Media/'.$this->dados2[$i]['foto'];?>">
+        <img src="<?php echo './Media/'.$this->dados2[$i]['foto'];?>">
         <h3><?php echo $this->dados2[$i]['titulo'];?></h3>
         <h3>DATA</h3>
         <h4><?php echo $this->dados2[$i]['dataNoticia'];?></h4>
@@ -36,10 +37,3 @@ if(!isset($_SESSION['idAdminApoiado']))
 </div>
 
 
-<?php
-echo $_SESSION['id_usuario'];
-
-echo'<pre>';
-print_r($this->dados2);
-echo'<pre>';
-?>
