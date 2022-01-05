@@ -35,7 +35,7 @@
     $imgobjeto = new RetornoImage($_FILES["foto"]);
     $fotoLocal = $imgobjeto->getNomeimage();
     }else{
-        $fotoLocal = $foto;
+        $fotoLocal = $fotont;
     }
    
     $noticia = new Noticias(

@@ -78,7 +78,7 @@ class ServicoAdminApoiado implements InterfaceCrud
 
          $dados = array();
             
-            $listandoUsuario = "SELECT nt.* FROM adminApoiado admapd JOIN noticias nt 
+            $listandoUsuario = "SELECT admapd.nomeCompleto, admapd.foto, nt.* FROM adminApoiado admapd JOIN noticias nt 
             ON(admapd.idAdminApoiado = nt.adminApoiadoFK)
             WHERE admapd.idAdminApoiado='$id';";
                 

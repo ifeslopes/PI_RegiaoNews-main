@@ -68,7 +68,9 @@ class ServicoNoticia implements InterfaceCrud
          
             $dados = array();
             
-            $listandoUsuario = "SELECT * FROM noticias WHERE idnoticias='$id';";
+            $listandoUsuario = "SELECT * FROM adminApoiado ap 
+            JOIN noticias nt ON(ap.idadminApoiado = nt.adminApoiadoFK) 
+            WHERE idnoticias='$id';";
                 
             $resultado = $this->con->query($listandoUsuario);
             
@@ -97,7 +99,7 @@ class ServicoNoticia implements InterfaceCrud
             titulo= '$titulo', 
             texto_destaque= '$textoDestaque',
             texto_completo='$textoCompleto',
-            foto= '$foto ', 
+            fotont= '$foto ', 
             dataNoticia='$data', 
             adminApoiadoFK='$idadminApioadoFK' WHERE idnoticias ='$id' ";
 

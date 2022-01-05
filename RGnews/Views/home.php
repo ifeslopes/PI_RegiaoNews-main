@@ -43,26 +43,26 @@
           <div class="carousel-inner">
               <a href="<?php echo 'noticias/news/'. $this->dados2[0]['idnoticias'];?>">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="Media/<? echo $this->dados2[0]['foto'];?>" alt="<? echo $this->dados2[0]['titulo'];?>">
-              <div class="carousel-caption p-3 mb-2 bg-transparent text-dark">
+              <img class="d-block w-100" src="Media/<? echo $this->dados2[0]['fotont'];?>" alt="<? echo $this->dados2[0]['titulo'];?>">
+              <div class="carousel-caption p-6 mb-2 espelho">
                 <h4 clas="display-4 "><? echo $this->dados2[0]['titulo'];?></h4>
               </div>
               </a>
             </div>
             <div class="carousel-item">
-                <a href="<?php echo 'noticias/news/'. $this->dados2[1]['idnoticias'];?>">
-              <img class="d-block w-100" src=" Media/<? echo $this->dados2[1]['foto'];?>" alt="<? echo $this->dados2[1]['titulo'];?>">
-              <div class="carousel-caption p-3 mb-2 bg-transparent text-dark">
+                <a href="<?php echo 'noticias/news/'. $this->dados2[3]['idnoticias'];?>">
+              <img class="d-block w-100" src=" Media/<? echo $this->dados2[1]['fotont'];?>" alt="<? echo $this->dados2[1]['titulo'];?>">
+              <div class="carousel-caption p-3 mb-2 espelho">
                 <h4 clas="display-4"><? echo $this->dados2[1]['titulo'];?></h4>
               </div>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="<?php echo 'noticias/news/'. $this->dados2[2]['idnoticias'];?>">
-              <img class="d-block w-100" src="Media/<? echo $this->dados2[2]['foto'];?>" alt="<? echo $this->dados2[2]['titulo'];?>"
+              <img class="d-block w-100" src="Media/<? echo $this->dados2[2]['fotont'];?>" alt="<? echo $this->dados2[2]['titulo'];?>"
               >
-              <div class="carousel-caption p-3 mb-2 bg-transparent text-dark">
-                <h4 clas="display-4"><? echo $this->dados2[2]['titulo'];?></h4>
+              <div class="carousel-caption p-3 mb-2 espelho ">
+                <h4 clas="display-4 "><? echo $this->dados2[2]['titulo'];?></h4>
               </div>
                 </a>
             </div>
@@ -92,20 +92,22 @@
     <div class="container">
       <div class="my-5">
         <span class="h6 d-block">TUDO DE MELHOR PARA </span>
-        <h2 class="display-4 text-primary ">Aproveite as Vantagens</h2>
+        <h2 class="display-4 text-primary ">Aqui você encontra noticias da sua Região</h2>
       </div>
       <div class="row">
 
           <?php for($i=0;$i< count($this->dados2); $i++ ){
             ?>
-        <div class="col-xl-4 col-md-6">
+            <a href="<?php echo 'noticias/news/'. $this->dados2[$i]['idnoticias'];?>" class="text-dark">
+        <div class="col-lg-3 col-md-3 shadow p-3 ml-3 mb-3 bg-white rounded box-shadow text-dark">
           <div style="height: 100px" class="d-flex justify-content-center">
-            <img src="Media/<? echo $this->dados2[$i]['foto'];?>" alt="passaporte">
+            <img src="Media/<? echo $this->dados2[$i]['fotont'];?>" alt="passaporte">
           </div>
           <h3> <? echo $this->dados2[$i]['titulo'];?></h3>
-          <p>
+          <p class=" text-truncate">
             <? echo $this->dados2[$i]['texto_completo'];?>
           </p>
+        </a>
         </div>
 
         <?php
@@ -113,9 +115,6 @@
         ?>
        
   
-      <footer blockquote-footer>
-        Bob birlan
-      </footer>
     </blockquote>
   </section>
 

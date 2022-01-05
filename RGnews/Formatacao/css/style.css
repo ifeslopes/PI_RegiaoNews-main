@@ -25,3 +25,12 @@ body{
   padding: 1rem;
   
 }
+
+.espelho{
+
+  background: rgba(15, 0, 0, 0.712);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFF;
+  border-radius: 10px 10px;
+}

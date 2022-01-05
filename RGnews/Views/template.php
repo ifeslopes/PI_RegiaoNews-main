@@ -120,7 +120,7 @@ session_start();
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="<?php echo '/PI_RegiaoNews-main/RGnews/adminApoiado' ;?>">Administrador</a>
-            <a class="dropdown-item" href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias' ;?>">Noticias</a>
+            <a class="dropdown-item" href="<?php echo '/PI_RegiaoNews-main/RGnews/adminApoiado/newsapoiado/'.$_SESSION['idAdminApoiado'] ;?>">Noticias</a>
             <a class="dropdown-item" href="<?php echo '/PI_RegiaoNews-main/RGnews/home/sair' ;?>">Sair</a>
           </div>
         </li>

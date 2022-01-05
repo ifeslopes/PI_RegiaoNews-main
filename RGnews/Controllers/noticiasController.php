@@ -19,9 +19,11 @@ class noticiasController extends Controller
 
         $n = new ServicoNoticia();
         $dados = $n->listarID($id_noticia);
+        $dados2 = $n->listar();
+
        
       
-        $this->carregarTemplate('news', $dados);
+        $this->carregarTemplate('news', $dados,$dados2);
 
     }
     public function inserindonews(){

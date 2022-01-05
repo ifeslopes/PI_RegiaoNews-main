@@ -1,9 +1,9 @@
 <?php
-session_start();
+
 unset($_SESSION['idAdminApoiado']);
 
 
 
-header("location:../home")
+header("location:/PI_RegiaoNews-main/RGnews/home")
 
 ?>
