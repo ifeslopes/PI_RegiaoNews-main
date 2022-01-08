@@ -41,25 +41,26 @@
             <li data-target="#carouselCidade" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-              <a href="<?php echo 'noticias/news/'. $this->dados2[0]['idnoticias'];?>">
+              <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[0]['idnoticias'];?>">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="Media/<? echo $this->dados2[0]['fotont'];?>" alt="<? echo $this->dados2[0]['titulo'];?>">
+              <img class="d-block w-100" src="/PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[0]['fotont'];?>" alt="<? echo $this->dados2[0]['titulo'];?>">
               <div class="carousel-caption p-6 mb-2 espelho">
                 <h4 clas="display-4 "><? echo $this->dados2[0]['titulo'];?></h4>
               </div>
               </a>
             </div>
             <div class="carousel-item">
-                <a href="<?php echo 'noticias/news/'. $this->dados2[3]['idnoticias'];?>">
-              <img class="d-block w-100" src=" Media/<? echo $this->dados2[1]['fotont'];?>" alt="<? echo $this->dados2[1]['titulo'];?>">
+                <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[3]['idnoticias'];?>">
+              <img class="d-block w-100" src=" /PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[1]['fotont'];?>" alt="<? echo $this->dados2[1]['titulo'];?>">
               <div class="carousel-caption p-3 mb-2 espelho">
                 <h4 clas="display-4"><? echo $this->dados2[1]['titulo'];?></h4>
               </div>
                 </a>
             </div>
+
             <div class="carousel-item">
-                <a href="<?php echo 'noticias/news/'. $this->dados2[2]['idnoticias'];?>">
-              <img class="d-block w-100" src="Media/<? echo $this->dados2[2]['fotont'];?>" alt="<? echo $this->dados2[2]['titulo'];?>"
+                <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[2]['idnoticias'];?>">
+              <img class="d-block w-100" src="/PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[2]['fotont'];?>" alt="<? echo $this->dados2[2]['titulo'];?>"
               >
               <div class="carousel-caption p-3 mb-2 espelho ">
                 <h4 clas="display-4 "><? echo $this->dados2[2]['titulo'];?></h4>
@@ -94,14 +95,14 @@
         <span class="h6 d-block">TUDO DE MELHOR PARA </span>
         <h2 class="display-4 text-primary ">Aqui você encontra noticias da sua Região</h2>
       </div>
-      <div class="row">
+      <div class="row justify-content-md-center">
 
           <?php for($i=0;$i< count($this->dados2); $i++ ){
             ?>
-            <a href="<?php echo 'noticias/news/'. $this->dados2[$i]['idnoticias'];?>" class="text-dark">
+            <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[$i]['idnoticias'];?>" class="text-dark">
         <div class="col-lg-3 col-md-3 shadow p-3 ml-3 mb-3 bg-white rounded box-shadow text-dark">
           <div style="height: 100px" class="d-flex justify-content-center">
-            <img src="Media/<? echo $this->dados2[$i]['fotont'];?>" alt="passaporte">
+            <img src="/PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[$i]['fotont'];?>" alt="passaporte">
           </div>
           <h3> <? echo $this->dados2[$i]['titulo'];?></h3>
           <p class=" text-truncate">

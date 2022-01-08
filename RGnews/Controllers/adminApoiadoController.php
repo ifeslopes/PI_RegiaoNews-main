@@ -48,14 +48,7 @@ class adminApoiadoController extends Controller
 
          $n = new ServicoAdminApoiado;
          $dados = $n->listarNoticiaApoiado($id);
-         echo "<pre>";
-         var_dump($dados);
-
-        echo "</pre>";
-            
-            
-        
-      
+           
         $this->carregarTemplate('newsapoiado',$dados);
 
     }

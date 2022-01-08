@@ -1,8 +1,5 @@
-<?php
-session_start();
-echo $_SESSION['idAdminApoiado'];
-?>
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +24,46 @@ echo $_SESSION['idAdminApoiado'];
 </div>
     
 </body>
-</html>
+</html> -->
+
+  <section class="container ">
+
+    <div class="my-5 text-center">
+
+      <h2 class="display-4 text-primary ">Cadastra novo usuario</h2>
+    </div>
+    <div class="row justify-content-md-center">
+       
+      <div class="col-md-7 mb-4 ">
+        <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
+          <div class="form-group">
+            <label for="clientEmail">Título da notícia</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label for="clientMenssagem">Noticia</label>
+            <textarea class="form-control"  rows="12" name="textocompleto"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="clientMenssagem">Texo Destaque</label>
+            <textarea class="form-control"  rows="6" name="textodestaque"></textarea>
+          </div>
+
+
+          <div class="form-group">
+            <label for="clientMenssagem">Adicionar foto</label><br>
+               <input  name="foto" type="file" class="file" data-browse-on-zone-click="true">
+            
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary">Salvar noticia</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
 
 <?php if (isset($_POST["name"])) {
     $titulo = $_POST["name"];

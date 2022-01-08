@@ -16,19 +16,19 @@ $tipoUsuario =1;
 
 
 <section class=" py-3 bg-light text-center">
-    <div class="container">
-      <div class="my-5">
+  <div class="container">
+    <div class="my-5">
+        <a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">
+                    <button type="button" class="btn btn-danger">Nova Conta</button>
+              </a>
        
         <h2 class="display-4 text-primary text-muted py-3 ">Administrador e Apoiadores</h2>
       </div>
       <div class="row">
-        <a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">
-                    <button type="button" class="btn btn-danger">Nova Conta</button>
-              </a>
 
           <?php for($i=0;$i< count($this->dados2); $i++ ){
             ?>
-        <div class=" col-md-12 py-2">
+        <div class=" col-md-4 py-2">
           <div class="justify-content-center ">
             <img src="/PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[$i]['foto'];?>"
             class= "rounded-circle" style=" width:100px; height:100px" >

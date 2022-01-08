@@ -33,7 +33,7 @@ class Core
             $metodo = "index";
         }
 
-        $caminho = "RGnews/Controllers/" . $controller . ".php";
+        $caminho = "/PI_RegiaoNews-main/RGnews/Controllers/" . $controller . ".php";
 
         if (!file_exists($caminho) && !method_exists($controller, $metodo)) {
             $controller = "homeController";

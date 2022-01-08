@@ -24,9 +24,8 @@ class ServicoNoticia implements InterfaceCrud
             $data = $noticias->getData();
             $idadminApioadoFK = $noticias->getIdadminApioadoFK();
 
-            echo $noticias->getTitulo();
-            echo $noticias->getIdadminApioadoFK();
-            $inserindoNoticia = "INSERT INTO noticias (titulo, texto_destaque, texto_completo, foto, dataNoticia, adminApoiadoFK)
+            ;
+            $inserindoNoticia = "INSERT INTO noticias (titulo, texto_destaque, texto_completo, fotont, dataNoticia, adminApoiadoFK)
             VALUES(' $titulo ',
             '$textoDestaque',
             '$textoCompleto',
@@ -37,11 +36,13 @@ class ServicoNoticia implements InterfaceCrud
             $resultado = $this->con->prepare($inserindoNoticia);
             $resultado->execute();
 
+            
             if ($resultado->rowCount()) {
                 echo "<br>Noticia Salva  com sucesso!";
             } else {
                 echo "<br> notica nao foi Salva";
             }
+            
         }
 
         public function listar()
