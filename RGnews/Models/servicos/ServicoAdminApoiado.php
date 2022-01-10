@@ -23,23 +23,39 @@ class ServicoAdminApoiado implements InterfaceCrud
          $resumoBio = $adminApoiado->getResumoBio();
          $foto = $adminApoiado->getFoto();
 
+         $msg='';
 
-        
-        $inserindoUsuario = "INSERT INTO adminApoiado (nomeCompleto, email, senha, adminstrador, resumoBio, foto)
-        VALUES('$nomeCompleto',
-        '$email',
-        '$senha',
-        '$administrado',
-        '$resumoBio',
-        '$foto' )";
 
-        $resultado = $this->con->query($inserindoUsuario);
-        
-        if ($resultado->rowCount()) {
-            echo "<br>Cadastrado com sucesso!";
-        } else {
-            echo "<br>nao foi cadastrado";
+        $userExiste = $this->con->query("SELECT idadminApoiado FROM adminApoiado WHERE email='$email';");
+        if($userExiste->rowCount() > 0){
+
+               
+                        $msg= '<div class="alert alert-danger" role="alert">
+                          Esse email já foi usado por outra conta
+                          </div>';
+                          
+        }else{
+            $inserindoUsuario = "INSERT INTO adminApoiado (nomeCompleto, email, senha, adminstrador, resumoBio, foto)
+            VALUES('$nomeCompleto',
+            '$email',
+            '$senha',
+            '$administrado',
+            '$resumoBio',
+            '$foto' )";
+
+            $resultado = $this->con->query($inserindoUsuario);
+            
+            if ($resultado->rowCount()) {
+                $msg ='<div class="alert alert-success" role="alert">
+                            Cadastro realizado com Sucesso!!
+                        </div>';
+            } else {
+                $msg = '<div class="alert alert-danger" role="alert">
+                          Erro na hora Salvar no banco de dado!!
+                          </div>';;
+            }
         }
+        return $msg;
     }
     public function listar()
     {
@@ -78,19 +94,18 @@ class ServicoAdminApoiado implements InterfaceCrud
 
          $dados = array();
             
-            $listandoUsuario = "SELECT admapd.nomeCompleto, admapd.foto, nt.* FROM adminApoiado admapd JOIN noticias nt 
+            $listandoUsuario = "SELECT admapd.idAdminApoiado, admapd.nomeCompleto, admapd.foto, nt.* FROM adminApoiado admapd JOIN noticias nt 
             ON(admapd.idAdminApoiado = nt.adminApoiadoFK)
             WHERE admapd.idAdminApoiado='$id';";
                 
             $resultado = $this->con->query($listandoUsuario);
             
-
             
-               $dados = $resultado->fetchAll(PDO::FETCH_ASSOC);
-                    
-                
+                $dados = $resultado->fetchAll(PDO::FETCH_ASSOC);
+                               
                 return $dados;
-
+             
+           
     }
     public function editar($adminApoiado, $id)
     {

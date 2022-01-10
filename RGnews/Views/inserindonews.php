@@ -30,11 +30,17 @@
 
     <div class="my-5 text-center">
 
-      <h2 class="display-4 text-primary ">Cadastra novo usuario</h2>
+      <h2 class="display-4 text-primary ">Cadastra Nova Notícias</h2>
     </div>
+    
     <div class="row justify-content-md-center">
-       
+
+     <a href="<?php echo '/PI_RegiaoNews-main/RGnews/adminApoiado/newsapoiado/' . $_SESSION['idAdminApoiado']; ?>">
+        <button type="submit" class="btn btn-success">Voltar</button>
+    </a>
+
       <div class="col-md-7 mb-4 ">
+
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">
             <label for="clientEmail">Título da notícia</label>
@@ -66,11 +72,11 @@
   </section>
 
 <?php if (isset($_POST["name"])) {
-    $titulo = $_POST["name"];
-    $textoDestaque = $_POST["textodestaque"];
-    $textoCompleto = $_POST["textocompleto"];
-    $nome_arquivo;
-    $data = date("Y-m-d");
+    $titulo = addslashes( $_POST["name"]);
+    $textoDestaque = addslashes( $_POST["textodestaque"]);
+    $textoCompleto = addslashes($_POST["textocompleto"]);
+
+    $data = date("d/m/Y");
     $idadminApioadoFK = $_SESSION['idAdminApoiado'];
 
     $imgobjeto = new RetornoImage($_FILES["foto"]);

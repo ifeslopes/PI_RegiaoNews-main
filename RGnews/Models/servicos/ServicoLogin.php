@@ -28,14 +28,14 @@ public function loga($email, $senha)
             $_SESSION['foto'] = $dado['foto'];
         
            
-           
+           unset($_SESSION['msg']);
             return true; //logado com sucesso
         }
         else
         {
              session_start();
                         $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
-                           A simple danger alert—check it out!
+                           Senha ou Email Invalido!!
                           </div>';
 
             return false;     

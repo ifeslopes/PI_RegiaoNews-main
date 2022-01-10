@@ -4,8 +4,8 @@ body{
 }
 
 .box-shadow{
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.05), 
-  0 4px 8px 0 rgba(0,0,0,.05);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.09), 
+  0 4px 8px 0 rgba(0,0,0,.09);
 }
 #home-quote{
   background:url('../img/bg-quote.jpg') center center;

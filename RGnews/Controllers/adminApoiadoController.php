@@ -26,6 +26,7 @@ class adminApoiadoController extends Controller
         $this->carregarTemplate('biografia',$dados);
 
     }
+
     public function inserindousuario(){
 
        
@@ -33,6 +34,7 @@ class adminApoiadoController extends Controller
         $this->carregarTemplate('inserindousuario');
 
     }
+
     public function editandousuario($id){
 
          $n = new ServicoAdminApoiado;
@@ -44,12 +46,14 @@ class adminApoiadoController extends Controller
         $this->carregarTemplate('editandousuario',$dados);
 
     }
+
     public function newsapoiado ($id){
 
          $n = new ServicoAdminApoiado;
          $dados = $n->listarNoticiaApoiado($id);
+         $dados2 = $n->listarID($id);
            
-        $this->carregarTemplate('newsapoiado',$dados);
+        $this->carregarTemplate('newsapoiado',$dados, $dados2);
 
     }
 

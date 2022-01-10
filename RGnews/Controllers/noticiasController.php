@@ -31,6 +31,7 @@ class noticiasController extends Controller
         $this->carregarTemplate('inserindonews');
 
     }
+    
     public function editandonews($id){
 
          $n = new ServicoNoticia();

@@ -56,7 +56,7 @@ session_start();
 
             <?
 
-            echo $_SESSION['msg'];
+            echo isset($_SESSION['msg'])? $_SESSION['msg']:'';
             ?>
 
 

@@ -1,27 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova noticia</title>
-</head>
-<body>
-    <h1>Editandonews teste</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label>NOME</label>
-        <input type="text" name="name" value="<?php echo $titulo?>">
-        <label>Texto Destaque</label>
-        <input type="text" name="textodestaque" value="<?php echo $texto_destaque?>">
-        <label>Texto Completo</label>
-        <input type="text" name="textocompleto" value="<?php echo $texto_completo?>">
-        <input type="file" name="foto">
-        
-        <input type="submit" >
-    </form>
-    
-</body>
-</html> -->
   <section class="container ">
 
     <div class="my-5 text-center">
@@ -29,7 +5,11 @@
       <h2 class="display-4 text-primary ">Cadastra novo usuario</h2>
     </div>
     <div class="row justify-content-md-center">
-       
+
+    <a href="<?php echo '/PI_RegiaoNews-main/RGnews/adminApoiado/newsapoiado/' . $_SESSION['idAdminApoiado']; ?>">
+        <button type="submit" class="btn btn-success">Voltar</button>
+    </a>
+    
       <div class="col-md-7 mb-4 ">
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">
@@ -62,11 +42,11 @@
   </section>
 
 <?php if (isset($_POST["name"])) {
-    $titulo = $_POST["name"];
-    $textoDestaque = $_POST["textodestaque"];
-    $textoCompleto = $_POST["textocompleto"];
-    $nome_arquivo;
-    $data = date("Y-m-d");
+    $titulo = addslashes( $_POST["name"]);
+    $textoDestaque = addslashes( $_POST["textodestaque"]);
+    $textoCompleto = addslashes($_POST["textocompleto"]);
+
+    $dataLocal = date("y-m-d");
     $idadminApioadoFK = $adminApoiadoFK;
 
     if(!empty($_FILES['foto']['name'])){
@@ -81,7 +61,7 @@
         $textoDestaque,
         $textoCompleto,
         $fotoLocal,
-        $data,
+        $dataLocal,
         $idadminApioadoFK
     );
     $inserido = new ServicoNoticia();

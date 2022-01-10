@@ -45,7 +45,7 @@ class RetornoImage
         } else {
             
             echo "só e possivel enviar arquivos jpg e png!";
-            exit();
+            
         }
     }
 }

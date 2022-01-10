@@ -1,3 +1,7 @@
+<?php
+$dateBR = implode( '/', array_reverse( explode( '-', $dataNoticia ) ) );
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
             
             <img src="<?php echo '/PI_RegiaoNews-main/RGnews/Media/'.$fotont;?>" class="img-fluid" alt="Responsive image">
 
-            <h7 style="margin-top: 1rem; float: left " class="bg-secondary text-white"> <?php echo" Data da publicação: ". $dataNoticia;?> </h7>
+            <h7 style="margin-top: 1rem; float: left " class="bg-secondary text-white"> <?php echo" Data da publicação: ".$dateBR ;?> </h7>  
         </div>
         <h7 style="margin-top: 2rem; float: left"> <h3><?php echo $titulo;?></h3> </h7>
         <hr class="style14">
