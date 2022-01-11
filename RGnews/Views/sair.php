@@ -3,7 +3,8 @@
 unset($_SESSION['idAdminApoiado']);
 
 
+   
+    header("location:/PI_RegiaoNews-main/RGnews");
 
-header("location:/PI_RegiaoNews-main/RGnews/home")
 
 ?>

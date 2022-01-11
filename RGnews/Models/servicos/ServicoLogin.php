@@ -28,7 +28,7 @@ public function loga($email, $senha)
             $_SESSION['foto'] = $dado['foto'];
         
            
-           unset($_SESSION['msg']);
+           
             return true; //logado com sucesso
         }
         else

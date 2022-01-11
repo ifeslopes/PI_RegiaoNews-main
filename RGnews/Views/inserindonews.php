@@ -68,7 +68,7 @@ if (isset($_POST["name"])) {
 
       <div class="col-md-7 mb-4 ">
 
-         <? if(isset($msg)){ echo $msg; }   ?>
+         <?php if(isset($msg)){ echo $msg; }   ?>
 
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">

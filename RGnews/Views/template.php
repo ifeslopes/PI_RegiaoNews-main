@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 session_start();
 
 
@@ -54,10 +54,10 @@ session_start();
 
             <small class="form-text text-muted">Esqueceu à senha? <a href="#">clica aqui </a>.</small>
 
-            <?
+            <!-- <php?
 
-            echo isset($_SESSION['msg'])? $_SESSION['msg']:'';
-            ?>
+            echo isset($_SESSION['msg']) ? $_SESSION['msg'] : '';
+            ?> -->
 
 
           </form>
@@ -68,28 +68,28 @@ session_start();
   </div>
 
   <!-- modal2 -->
-      <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            
-                <div class="modal-header bg-danger text-white">
-                  <h4 class="modal-title" id="myModalLabel">Confirmação para Deletar</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-            
-                <div class="modal-body">
-                    
-                    
-                    <p>Tem certeza de que quer excluir este item? </p>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger btn-ok">Delete</a>
-                </div>
-            </div>
+  <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header bg-danger text-white">
+          <h4 class="modal-title" id="myModalLabel">Confirmação para Deletar</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
+
+        <div class="modal-body">
+
+
+          <p>Tem certeza de que quer excluir este item? </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-danger btn-ok">Delete</a>
+        </div>
+      </div>
     </div>
+  </div>
 
 
   <?php
@@ -134,7 +134,7 @@ session_start();
         ?>
           <li class="nav-item active dropdown px-4 ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img style=" width:40px; height:40px" src="/PI_RegiaoNews-main/RGnews/Media/<? echo $_SESSION['foto'] ?>" alt="Caravam" class="rounded-circle  ">
+              <img style=" width:40px; height:40px" src="/PI_RegiaoNews-main/RGnews/Media/<?php echo $_SESSION['foto'] ?>"  class="rounded-circle">
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -160,6 +160,7 @@ session_start();
 
         <?php
         }
+
         ?>
 
       </ul>
@@ -214,15 +215,16 @@ session_start();
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/bootstrap.js"></script>
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/app.js"></script>
 
-    <script>
-        $('#confirm-delete').on('show.bs.modal', function(e) {
-            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-            
-            $('.debug-url').html('Deletar  item no endereço: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-        });
-    </script>
+  <script>
+    $('#confirm-delete').on('show.bs.modal', function(e) {
+      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+
+      $('.debug-url').html('Deletar  item no endereço: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+    });
+  </script>
 
 
 </body>
 
 </html>
+<?php ob_end_flush(); ?>
