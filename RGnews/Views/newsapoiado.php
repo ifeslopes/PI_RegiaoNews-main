@@ -39,7 +39,7 @@ if (count($this->dados) > 0) {        //aqui testa se usuario tem notcias cadasr
 <section class=" py-5 bg-light text-center">
   <div class="container">
     <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/inserindonews'; ?>" class="button">
-      <button type="button" class="btn btn-danger">Nova Notícia</button>
+      <button type="button" class="btn btn-success">Nova Notícia +</button>
     </a>
     <div class="my-5">
       <div style="height: 100px" class="d-flex justify-content-center ">
@@ -74,9 +74,12 @@ if (count($this->dados) > 0) {        //aqui testa se usuario tem notcias cadasr
               <button type="button" class="btn btn-info ">Editar</button>
             </a>
 
-            <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/deletandonews/' . $this->dados[$i]['idnoticias']; ?>">
-              <button type="button" class="btn btn-danger">Deletar</button>
-            </a>
+ 
+          <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/deletandonews/'. $this->dados[$i]['idnoticias']; ?>
+          " data-href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/deletandonews/'. $this->dados[$i]['idnoticias']; ?>" data-toggle="modal" data-target="#confirm-delete">
+            <button type="button" class="btn btn-danger">Deletar</button>
+              
+              </a>
           </div>
     </div>
 

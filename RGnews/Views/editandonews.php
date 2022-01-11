@@ -1,4 +1,42 @@
-  <section class="container ">
+
+<?php 
+
+
+
+if (isset($_POST["name"])) {
+    $titulo = addslashes( $_POST["name"]);
+    $textoDestaque = addslashes( $_POST["textodestaque"]);
+    $textoCompleto = addslashes($_POST["textocompleto"]);
+
+    $dataLocal = date("y-m-d");
+    $idadminApioadoFK = $adminApoiadoFK;
+
+    if(!empty($_FILES['foto']['name'])){
+    $imgobjeto = new RetornoImage($_FILES["foto"]);
+    $fotoLocal = $imgobjeto->getNomeimage();
+    }else{
+        $fotoLocal = $fotont;
+    }
+   
+    $noticia = new Noticias(
+        $titulo,
+        $textoDestaque,
+        $textoCompleto,
+        $fotoLocal,
+        $dataLocal,
+        $idadminApioadoFK
+    );
+    $inserido = new ServicoNoticia();
+   $msg = $inserido->editar($noticia, $idnoticias);
+}
+
+?>
+
+
+
+
+
+<section class="container ">
 
     <div class="my-5 text-center">
 
@@ -11,6 +49,9 @@
     </a>
     
       <div class="col-md-7 mb-4 ">
+
+      <? if(isset($msg)){ echo $msg; }   ?>
+      
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">
             <label for="clientEmail">Título da notícia</label>
@@ -41,31 +82,3 @@
     </div>
   </section>
 
-<?php if (isset($_POST["name"])) {
-    $titulo = addslashes( $_POST["name"]);
-    $textoDestaque = addslashes( $_POST["textodestaque"]);
-    $textoCompleto = addslashes($_POST["textocompleto"]);
-
-    $dataLocal = date("y-m-d");
-    $idadminApioadoFK = $adminApoiadoFK;
-
-    if(!empty($_FILES['foto']['name'])){
-    $imgobjeto = new RetornoImage($_FILES["foto"]);
-    $fotoLocal = $imgobjeto->getNomeimage();
-    }else{
-        $fotoLocal = $fotont;
-    }
-   
-    $noticia = new Noticias(
-        $titulo,
-        $textoDestaque,
-        $textoCompleto,
-        $fotoLocal,
-        $dataLocal,
-        $idadminApioadoFK
-    );
-    $inserido = new ServicoNoticia();
-    $inserido->editar($noticia, $idnoticias);
-}
-
-?>

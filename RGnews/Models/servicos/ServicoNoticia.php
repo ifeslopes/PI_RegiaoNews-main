@@ -16,6 +16,7 @@ class ServicoNoticia implements InterfaceCrud
     
     public function salvar($noticias){
             
+            $msg='';
 
             $titulo = $noticias->getTitulo();
             $textoDestaque = $noticias->getTextoDestaque();
@@ -24,7 +25,7 @@ class ServicoNoticia implements InterfaceCrud
             $data = $noticias->getData();
             $idadminApioadoFK = $noticias->getIdadminApioadoFK();
 
-            ;
+          
             $inserindoNoticia = "INSERT INTO noticias (titulo, texto_destaque, texto_completo, fotont, dataNoticia, adminApoiadoFK)
             VALUES(' $titulo ',
             '$textoDestaque',
@@ -33,15 +34,21 @@ class ServicoNoticia implements InterfaceCrud
             ' $data',
             '$idadminApioadoFK' )";
 
-            $resultado = $this->con->prepare($inserindoNoticia);
-            $resultado->execute();
+            $resultado = $this->con->query($inserindoNoticia);
+            
 
             
             if ($resultado->rowCount()) {
-                echo "<br>Noticia Salva  com sucesso!";
+                $msg ='<div class="alert alert-success" role="alert">
+                            Cadastro realizado com Sucesso!!
+                        </div>';
             } else {
-                echo "<br> notica nao foi Salva";
+                $msg = '<div class="alert alert-danger" role="alert">
+                          Erro na hora Salvar no banco de dado!!
+                          </div>';;
             }
+        
+        return $msg;
             
         }
 
@@ -87,7 +94,7 @@ class ServicoNoticia implements InterfaceCrud
          }
     public function editar( $noticias, $id)
         {
-           
+           $msg='';
 
             $titulo = $noticias->getTitulo();
             $textoDestaque = $noticias->getTextoDestaque();
@@ -106,11 +113,17 @@ class ServicoNoticia implements InterfaceCrud
 
             $resultado = $this->con->query($editandoNoticia);
             
-            if ($resultado->rowCount()) {
-                echo "<br>Noticia atualizado com sucesso!";
+               if ($resultado->rowCount()) {
+                $msg ='<div class="alert alert-success" role="alert">
+                            Atualizado realizado com Sucesso!!
+                        </div>';
             } else {
-                echo "<br>Noticia nao foi atualizado";
+                $msg = '<div class="alert alert-danger" role="alert">
+                          Erro na hora Atualizar no banco de dado!!
+                          </div>';;
             }
+
+             return $msg;
         }
     
     
@@ -132,7 +145,3 @@ class ServicoNoticia implements InterfaceCrud
             }
         }
         }
-    
-
-
-?>

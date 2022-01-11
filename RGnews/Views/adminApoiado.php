@@ -19,7 +19,7 @@ $tipoUsuario =1;
   <div class="container">
     <div class="my-5">
         <a href="<?php echo 'adminApoiado/inserindousuario' ;?>" class="button">
-                    <button type="button" class="btn btn-danger">Nova Conta</button>
+                    <button type="button" class="btn btn-success">Nova Conta +</button>
               </a>
        
         <h2 class="display-4 text-primary text-muted py-3 ">Administrador e Apoiadores</h2>
@@ -44,12 +44,16 @@ $tipoUsuario =1;
                 <button  type="button" class="btn btn-info ">Editar</button>
               </a>
 
-              <a href="<?php echo 'adminApoiado/deletandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>">
-                    <button type="button" class="btn btn-danger">Deletar</button>
+
+               <a href="<?php echo 'adminApoiado/deletandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>
+          " data-href="<?php echo 'adminApoiado/deletandousuario/'. $this->dados2[$i]['idAdminApoiado'];?>" data-toggle="modal" data-target="#confirm-delete">
+            <button type="button" class="btn btn-danger">Deletar</button>
+              
               </a>
 
+
               <a href="<?php echo 'adminApoiado/newsapoiado/'. $this->dados2[$i]['idAdminApoiado'];?>">
-                    <button type="button" class="btn btn-danger">Noticias Postada</button>
+                    <button type="button" class="btn btn-success">Noticias Postada</button>
               </a>
             </div>
 

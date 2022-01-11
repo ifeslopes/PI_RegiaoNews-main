@@ -67,6 +67,30 @@ session_start();
     </div>
   </div>
 
+  <!-- modal2 -->
+      <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <div class="modal-header bg-danger text-white">
+                  <h4 class="modal-title" id="myModalLabel">Confirmação para Deletar</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+            
+                <div class="modal-body">
+                    
+                    
+                    <p>Tem certeza de que quer excluir este item? </p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger btn-ok">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
   <?php
 
@@ -154,9 +178,6 @@ session_start();
   <footer class="bg-dark text-white mt-1  ">
     <div class="conteiner px-4 py-2 ">
       <div class="row  d-flex justify-content-center">
-
-
-
         <div class="col-md-3 col-6 pl-5 ">
           <h4 class="h6">Dados de contato </h4>
           <ul class="list-unstyled text-secondary">
@@ -192,6 +213,14 @@ session_start();
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/popper.min.js"></script>
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/bootstrap.js"></script>
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/app.js"></script>
+
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+            
+            $('.debug-url').html('Deletar  item no endereço: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>
 
 
 </body>

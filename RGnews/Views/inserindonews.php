@@ -26,6 +26,33 @@
 </body>
 </html> -->
 
+<?php
+
+
+if (isset($_POST["name"])) {
+    $titulo = addslashes( $_POST["name"]);
+    $textoDestaque = addslashes( $_POST["textodestaque"]);
+    $textoCompleto = addslashes($_POST["textocompleto"]);
+
+    $data = date("Y/m/d");
+    $idadminApioadoFK = $_SESSION['idAdminApoiado'];
+
+    $imgobjeto = new RetornoImage($_FILES["foto"]);
+    $foto = $imgobjeto->getNomeimage();
+    $noticia = new Noticias(
+        $titulo,
+        $textoDestaque,
+        $textoCompleto,
+        $foto,
+        $data,
+        $idadminApioadoFK
+    );
+    $inserido = new ServicoNoticia();
+   $msg = $inserido->salvar($noticia);
+}
+
+?>
+
   <section class="container ">
 
     <div class="my-5 text-center">
@@ -40,6 +67,8 @@
     </a>
 
       <div class="col-md-7 mb-4 ">
+
+         <? if(isset($msg)){ echo $msg; }   ?>
 
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">
@@ -71,26 +100,4 @@
     </div>
   </section>
 
-<?php if (isset($_POST["name"])) {
-    $titulo = addslashes( $_POST["name"]);
-    $textoDestaque = addslashes( $_POST["textodestaque"]);
-    $textoCompleto = addslashes($_POST["textocompleto"]);
 
-    $data = date("d/m/Y");
-    $idadminApioadoFK = $_SESSION['idAdminApoiado'];
-
-    $imgobjeto = new RetornoImage($_FILES["foto"]);
-    $foto = $imgobjeto->getNomeimage();
-    $noticia = new Noticias(
-        $titulo,
-        $textoDestaque,
-        $textoCompleto,
-        $foto,
-        $data,
-        $idadminApioadoFK
-    );
-    $inserido = new ServicoNoticia();
-    $inserido->salvar($noticia);
-}
-
-?>

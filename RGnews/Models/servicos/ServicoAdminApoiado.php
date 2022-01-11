@@ -109,7 +109,7 @@ class ServicoAdminApoiado implements InterfaceCrud
     }
     public function editar($adminApoiado, $id)
     {
-        
+        $msg='';
 
          $nomeCompleto = $adminApoiado->getNomeCompleto();
          $email =$adminApoiado->getEmail();
@@ -129,11 +129,20 @@ class ServicoAdminApoiado implements InterfaceCrud
 
         $resultado = $this->con->query($inserindoUsuario);
         
-        if ($resultado->rowCount()) {
-            echo "<br>Cadastrado atualizado com sucesso!";
-        } else {
-            echo "<br>nao foi atualizado";
-        }
+           if ($resultado->rowCount()) {
+                $msg ='<div class="alert alert-success" role="alert">
+                            Atualizado realizado com Sucesso!!
+                        </div>';
+            } else {
+                $msg = '<div class="alert alert-danger" role="alert">
+                          Erro na hora Atualizar no banco de dado!!
+                          </div>';;
+            }
+
+             return $msg;
+
+
+
     }
     public function deletar($id)
     {
@@ -150,14 +159,6 @@ class ServicoAdminApoiado implements InterfaceCrud
         }
     }
 
-
-
-    
-
-
-
 }
     
-
-
 ?>

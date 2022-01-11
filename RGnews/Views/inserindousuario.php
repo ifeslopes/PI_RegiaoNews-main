@@ -86,7 +86,7 @@
       <div class="col-md-7 mb-4 ">
 
        <? if(isset($msg)){
-      echo $msg;
+         echo $msg;
 
          }   ?>
 
