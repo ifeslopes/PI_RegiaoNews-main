@@ -152,11 +152,24 @@ class ServicoAdminApoiado implements InterfaceCrud
 
         $resultado = $this->con->query($inserindoUsuario);
         
-        if ($resultado->rowCount()) {
-            echo "<br> deletado atualizado com sucesso!";
-        } else {
-            echo "<br>nao foi atualizado";
-        }
+          if ($resultado->rowCount()) {
+              session_start();
+                $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+                            Item deletado com Sucesso!!
+                        </div>';
+
+                         header("location:/PI_RegiaoNews-main/RGnews/adminApoiado");
+                         exit;
+            } else {
+                session_start();
+                $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+                          Erro na hora deletar item no banco de dado!!
+                          </div>';
+
+                          header("location:/PI_RegiaoNews-main/RGnews/adminApoiado");
+                          exit;
+            }
+
     }
 
 }

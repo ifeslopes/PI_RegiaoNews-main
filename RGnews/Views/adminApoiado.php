@@ -22,8 +22,15 @@ if ($_SESSION['tipoUsuario'] != $tipoUsuario || !isset($_SESSION['idAdminApoiado
       </a>
 
       <h2 class="display-4 text-primary text-muted py-3 ">Administrador e Apoiadores</h2>
+        <?php 
+      if(isset($_SESSION['msg'])){
+      echo $_SESSION['msg'];
+      unset($_SESSION['msg']);
+      }
+      ?>
     </div>
     <div class="row">
+    
 
       <?php for ($i = 0; $i < count($this->dados2); $i++) {
       ?>

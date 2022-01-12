@@ -52,12 +52,16 @@ session_start();
 
             <button type="submit" class="btn btn-primary">Entrar na conta </button>
 
-            <small class="form-text text-muted">Esqueceu à senha? <a href="#">clica aqui </a>.</small>
+           
+              <!-- mensagem quando usuario erra senha ou email -->
+            <?php
 
-            <!-- <php?
+            if(isset($_SESSION['msgsenh'])){
 
-            echo isset($_SESSION['msg']) ? $_SESSION['msg'] : '';
-            ?> -->
+                echo  $_SESSION['msgsenh'];
+                unset($_SESSION['msgsenh']);
+                } 
+            ?> 
 
 
           </form>

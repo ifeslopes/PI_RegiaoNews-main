@@ -138,10 +138,28 @@ class ServicoNoticia implements InterfaceCrud
 
             $resultado = $this->con->query($deletaNoticias);
            
-            if ($resultado->rowCount()) {
-                echo "<br> deletado atualizado com sucesso!";
+            //quando deletar redirecionar para pagina de notícias de quem esta logado
+            
+              if ($resultado->rowCount()) {
+              session_start();
+                $_SESSION['msg'] = '<div class="alert alert-success" role="alert">
+                            Notícia deletado com Sucesso!!
+                        </div>';
+
+                         header("location:/PI_RegiaoNews-main/RGnews/adminApoiado/newsapoiado/".$_SESSION['idAdminApoiado']);
+
+                         exit;
             } else {
-                echo "<br>nao foi atualizado";
+                session_start();
+                $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+                          Erro na hora deletar Notícia no banco de dado!!
+                          </div>';
+
+                          header("location:/PI_RegiaoNews-main/RGnews/adminApoiado/newsapoiado/".$_SESSION['idAdminApoiado']);
+
+                          
+                          exit;
             }
+
         }
-        }
+}

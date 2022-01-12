@@ -34,7 +34,7 @@ public function loga($email, $senha)
         else
         {
              session_start();
-                        $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+                        $_SESSION['msgsenh'] = '<div class="alert alert-danger" role="alert">
                            Senha ou Email Invalido!!
                           </div>';
 
