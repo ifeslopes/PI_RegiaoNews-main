@@ -34,3 +34,14 @@ body{
   color: #FFF;
   border-radius: 10px 10px;
 }
+.espelho2{
+
+  background: rgba(15, 0, 0, 0.712);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFF;
+  
+}
+.bgimagem{
+  background: url('../img/favela01.jpg');
+}
