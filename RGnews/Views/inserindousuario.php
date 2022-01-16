@@ -1,43 +1,14 @@
-<!-- <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova noticia</title>
-</head>
-<body>
-    <div id="corpo-form-cad">
-    <h1>inserindo USUARIO teste</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label>NOME COMPLETO</label>
-        <input type="text" name="name">
-        <label>EMAIL</label>
-        <input type="text" name="email">
-        <label>SENHA</label>
-        <input type="text" name="senha"> 
-        <label>TIPO USUARIO</label>
-         <select name="tipoUsuario" >
-            <option value="0">Apoiador</option>
-            <option value="1">Administrador</option>
-         </select>
-         <br>
-        <label>BIOGRAFRIA</label>
-        <input type="text" name="biografia">
 
-        <input type="file" name="foto">
-        
-        <input type="submit" >
-    </form>
-</div>
-    
-</body>
-</html> -->
+<?php 
+if (!isset($_SESSION['idAdminApoiado'])) {
+  header("location:/PI_RegiaoNews-main/RGnews/home");
+  exit;
+}
 
 
-
-
-<?php if (isset($_POST["name"])) {
+if (isset($_POST["name"])) {
     $nome = $_POST["name"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -92,21 +63,30 @@
 
         <form  method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow  ">
           <div class="form-group">
-            <label for="clientEmail">Nome</label>
-            <input type="text" class="form-control" id="nome" name="name">
+            <label for="clientnome">Nome</label>
+            <input type="text" class="form-control" id="nome" name="name" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com Nome completo')"
+            oninput="setCustomValidity('')">
           </div>
           <div class="form-group">
             <label for="clientMenssagem">Email</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <input type="text" class="form-control" id="email" name="email" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com Email')"
+            oninput="setCustomValidity('')">
           </div>
           <div class="form-group">
             <label for="clientMenssagem">Senha</label>
-            <input type="password" class="form-control" id="emaill" name="senha">
+            <input type="password" class="form-control" id="emaill" name="senha" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com Senha')"
+            oninput="setCustomValidity('')">
           </div>
           
           <div class="form-group">
             <label for="clientMenssagem">Confirma senha</label>
-            <input type="password" class="form-control" id="confSenha" name="confiSenha">
+            <input type="password" class="form-control" id="confSenha" name="confiSenha" 
+            required=""
+             oninvalid="this.setCustomValidity('Por favor, confirma seu senha')"
+            oninput="setCustomValidity('')">
           </div>
 
           <div class="form-group">
@@ -119,14 +99,14 @@
 
             <div class="form-group">
             <label for="clientMenssagem">Biografia</label>
-            <textarea class="form-control"  rows="4" name="biografia" >  </textarea>
+            <textarea class="form-control"  rows="4" name="biografia" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com sua Biografia')"
+            oninput="setCustomValidity('')">  </textarea>
           </div>
 
-
-
-             <div class="form-group">
+          <div class="form-group">
             <label for="clientMenssagem">Adicionar foto</label><br>
-               <input  name="foto" type="file" class="file" data-browse-on-zone-click="true">
+            <input  name="foto" type="file" class="file" data-browse-on-zone-click="true">
             
           </div>
 

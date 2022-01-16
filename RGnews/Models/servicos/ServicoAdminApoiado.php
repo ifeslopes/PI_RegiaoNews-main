@@ -18,7 +18,7 @@ class ServicoAdminApoiado implements InterfaceCrud
 
          $nomeCompleto = $adminApoiado->getNomeCompleto();
          $email =$adminApoiado->getEmail();
-         $senha = $adminApoiado->getSenha();
+         $senha = MD5($adminApoiado->getSenha());
          $administrado =  $adminApoiado->getAdministrado();
          $resumoBio = $adminApoiado->getResumoBio();
          $foto = $adminApoiado->getFoto();
@@ -113,7 +113,7 @@ class ServicoAdminApoiado implements InterfaceCrud
 
          $nomeCompleto = $adminApoiado->getNomeCompleto();
          $email =$adminApoiado->getEmail();
-         $senha = $adminApoiado->getSenha();
+         $senha = MD5($adminApoiado->getSenha());
          $administrado =  $adminApoiado->getAdministrado();
          $resumoBio = $adminApoiado->getResumoBio();
          $foto = $adminApoiado->getFoto();

@@ -1,34 +1,11 @@
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova noticia</title>
-</head>
-<body>
-    <div id="corpo-form-cad">
-    <h1>inserindonews teste</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label>NOME</label>
-        <input type="text" name="name">
-        <label>Texto Destaque</label>
-        <input type="text" name="textodestaque">
-        <label>Texto Completo</label>
-        <input type="text" name="textocompleto">
-        <input type="file" name="foto">
-        
-        <input type="submit" >
-    </form>
-</div>
-    
-</body>
-</html> -->
-
 <?php
 
+if (!isset($_SESSION['idAdminApoiado'])) {
 
+
+  header("location:/PI_RegiaoNews-main/RGnews/home");
+  exit;
+}
 if (isset($_POST["name"])) {
     $titulo = addslashes( $_POST["name"]);
     $textoDestaque = addslashes( $_POST["textodestaque"]);
@@ -73,15 +50,24 @@ if (isset($_POST["name"])) {
         <form method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow ">
           <div class="form-group">
             <label for="clientEmail">Título da notícia</label>
-            <input type="text" class="form-control" name="name">
+            <input type="text"
+             class="form-control" name="name" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com titulo da noticias')"
+            oninput="setCustomValidity('')" >
           </div>
+
           <div class="form-group">
             <label for="clientMenssagem">Noticia</label>
-            <textarea class="form-control"  rows="12" name="textocompleto"></textarea>
+            <textarea class="form-control"  rows="12" name="textocompleto" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com Nóticia')"
+            oninput="setCustomValidity('')"></textarea>
           </div>
+          
           <div class="form-group">
             <label for="clientMenssagem">Texo Destaque</label>
-            <textarea class="form-control"  rows="6" name="textodestaque"></textarea>
+            <textarea class="form-control"  rows="6" name="textodestaque" required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com texto destaque')"
+            oninput="setCustomValidity('')"></textarea>
           </div>
 
 

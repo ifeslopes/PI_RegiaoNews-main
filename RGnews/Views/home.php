@@ -75,16 +75,25 @@
         <span class="h6 d-block">IFORMAÇÃO DE QUALIDADE </span>
         <h2 class="display-4 text-primary ">Aqui você encontra noticias da sua Região</h2>
       </div>
+
+      
+      <div class="row justify-content-md-center">
+         <div class="input-group mb-3 col-3  aling-center"> 
+       <input id="filtro" type="text" class="form-control text-white bg-dark" placeholder="Buscar Notícias"  > 
+      </div>
+       </div>
+
+
       <div class="row justify-content-md-center">
 
           <?php for($i=0;$i< count($this->dados2); $i++ ){
             ?>
             <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[$i]['idnoticias'];?>" class="text-dark">
-        <div class="col-lg-3 col-md-3 shadow p-3 ml-3 mb-3 bg-white rounded box-shadow text-dark">
-          <div style="height: 100px" class="d-flex justify-content-center">
+        <div class="col-lg-3 col-md-3 shadow p-3 ml-3 mb-3 bg-white rounded box-shadow text-dark noticias">
+          <div style="height: 100px" class="d-flex justify-content-center ">
             <img src="/PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[$i]['fotont'];?>" alt="passaporte">
           </div>
-          <h3> <? echo $this->dados2[$i]['titulo'];?></h3>
+          <h3 class="titulo"> <? echo $this->dados2[$i]['titulo'];?></h3>
           <p class=" text-truncate">
             <? echo $this->dados2[$i]['texto_completo'];?>
           </p>

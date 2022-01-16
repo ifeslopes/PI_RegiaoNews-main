@@ -1,6 +1,10 @@
 
 <?php 
 
+if (!isset($_SESSION['idAdminApoiado'])) {
+  header("location:/PI_RegiaoNews-main/RGnews/home");
+  exit;
+}
 if (isset($_POST["name"])) {
     $nome = $_POST["name"];
     $email = $_POST["email"];
@@ -56,7 +60,11 @@ if (isset($_POST["name"])) {
         <form  method="post" enctype="multipart/form-data" class="bg-light rounded p-4 box-shadow  ">
           <div class="form-group">
             <label for="clientEmail">Nome</label>
-            <input type="text" class="form-control" id="nome" name="name" value="<?php echo $nomeCompleto;?>" >
+            <input type="text" class="form-control" id="nome" name="name" value="<?php echo $nomeCompleto;?>" 
+            required=""
+             oninvalid="this.setCustomValidity('Por favor, entre com seu nome completo')"
+            oninput="setCustomValidity('')"
+            >
           </div>
           <div class="form-group">
             <label for="clientMenssagem">Email</label>

@@ -38,13 +38,13 @@ class RetornoImage
                     $FILES["tmp_name"],
                     "Media/" . $nome_arquivo
                 );
-                echo "imagem enviada com sucesso!";
+                
             }
 
             $this->nomeimage = $nome_arquivo;
         } else {
             
-            echo "só e possivel enviar arquivos jpg e png!";
+         
             
         }
     }

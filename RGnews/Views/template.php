@@ -107,7 +107,7 @@ session_start();
     if (!empty($email) && !empty($senha)) {
 
       $usuario = new ServicoLogin;
-      if ($usuario->loga($email, $senha)) {
+      if ($usuario->loga($email, MD5($senha))) {
         header("location: /PI_RegiaoNews-main/RGnews/home");
       } else {
 
@@ -180,31 +180,31 @@ session_start();
 
   <!-------------------------------------------->
   <!--RODAPE-->
-  <footer class="bg-dark text-white mt-1  ">
+  <footer class="gradient text-white mt-1  ">
     <div class="conteiner px-4 py-2 ">
       <div class="row  d-flex justify-content-center">
         <div class="col-md-3 col-6 pl-5 ">
           <h4 class="h6">Dados de contato </h4>
-          <ul class="list-unstyled text-secondary">
+          <ul class="list-unstyled text-dark">
 
             <li>ifes.lopes@gmail.com</li>
-            <li>27998111316 </li>
+            <li>279989-xxxx </li>
             <li>De Seg à Sex. Dás 8h às 18h</li>
           </ul>
         </div>
         <div class="col-md-3 col-6 pl-5">
-          <h4 class="h6">Dados de contato </h4>
-          <ul class="list-unstyled text-secondary">
-            <li><a class="btn btn-outline-secondary mb-2 btn-block btn-sm" href="#" style="max-width:140px">Facebook</a></li>
-            <li><a class="btn btn-outline-secondary mb-2 btn-block btn-sm" href="#" style="max-width:140px">Twitter</a></li>
-            <li><a class="btn btn-outline-secondary mb-2 btn-block btn-sm " style="max-width:140px" href="#">Instagram</a></li>
+          <h4 class="h6">Redes Sociais </h4>
+          <ul class="list-unstyled text-dark">
+            <li><a class="btn btn-outline-dark mb-2 btn-block btn-sm" href="https://www.linkedin.com/in/l3onardo-lop3s/" style="max-width:140px">Facebook</a></li>
+            <li><a class="btn btn-outline-dark mb-2 btn-block btn-sm" href="https://www.linkedin.com/in/l3onardo-lop3s/" style="max-width:140px">LinkedIn</a></li>
+            <li><a class="btn btn-outline-dark mb-2 btn-block btn-sm " style="max-width:140px" href="https://www.linkedin.com/in/l3onardo-lop3s/">Instagram</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="bg-primary text-center py-3">
       <p class="mb-0">
-        Lopes @ 2021 Alguns direitos resevafo
+        Leonardo Lopes @ 2022
       </p>
     </div>
   </footer>
@@ -219,13 +219,7 @@ session_start();
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/bootstrap.js"></script>
   <script type="text/javascript" src="/PI_RegiaoNews-main/RGnews/Formatacao/js/app.js"></script>
 
-  <script>
-    $('#confirm-delete').on('show.bs.modal', function(e) {
-      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 
-      $('.debug-url').html('Deletar  item no endereço: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-    });
-  </script>
 
 
 </body>
