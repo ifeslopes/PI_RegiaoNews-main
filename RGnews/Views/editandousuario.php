@@ -8,7 +8,7 @@ if (!isset($_SESSION['idAdminApoiado'])) {
 if (isset($_POST["name"])) {
     $nome = $_POST["name"];
     $email = $_POST["email"];
-    $senhaLocal = $_POST["senha"];
+    $senhaLocal =  preg_replace('/\s+/', '', $_POST["senha"]);
     $tipoUsuario = $_POST["tipoUsuario"];
     $biografia = $_POST["biografia"];
 
@@ -19,10 +19,11 @@ if (isset($_POST["name"])) {
         $fotoLocal = $foto;
     }
 
-    if(empty($_POST["senha"])){
+    if(!empty($senhaLocal)){
+      $senhaLocal = MD5($senhaLocal);
+    }
+    else{
       $senhaLocal = $senha;
-    
-
     }
 
     $noticia = new AdminApoiado(
