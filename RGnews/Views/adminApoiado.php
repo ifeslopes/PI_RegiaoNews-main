@@ -49,12 +49,17 @@ if ($_SESSION['tipoUsuario'] != $tipoUsuario || !isset($_SESSION['idAdminApoiado
               <button type="button" class="btn btn-info ">Editar</button>
             </a>
 
+          <?php
+            if($this->dados2[$i]['email']!='admin@admin.com'){
 
+            
+            ?>
             <a href="<?php echo 'adminApoiado/deletandousuario/' . $this->dados2[$i]['idAdminApoiado']; ?>
           " data-href="<?php echo 'adminApoiado/deletandousuario/' . $this->dados2[$i]['idAdminApoiado']; ?>" data-toggle="modal" data-target="#confirm-delete">
               <button type="button" class="btn btn-danger">Deletar</button>
-
             </a>
+
+            <?php } ?>
 
 
             <a href="<?php echo 'adminApoiado/newsapoiado/' . $this->dados2[$i]['idAdminApoiado']; ?>">

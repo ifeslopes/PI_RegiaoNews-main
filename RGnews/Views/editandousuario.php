@@ -83,8 +83,20 @@ if (isset($_POST["name"])) {
           <div class="form-group">
             <label for="clientMenssagem">Tipo de Usuário</label>
             <select name="tipoUsuario" >
+
+               <?php
+            if($email!='admin@admin.com'){
+
+              echo'
               <option value="0">Apoiador</option>
-              <option value="1">Administrador</option>
+              <option value="1">Administrador</option>';
+            }else{
+                echo'
+                <option value="1">Administrador</option>
+                ';
+
+              }
+            ?>
             </select>
           </div>
 
