@@ -85,8 +85,9 @@ if (isset($_POST["name"])) {
             <label for="clientMenssagem">Tipo de Usuário</label>
             <select name="tipoUsuario" >
 
-               <?php
-            if($email!='admin@admin.com'){
+            <?php
+            $naoApagaUsuario = 1;
+            if($idAdminApoiado!=$naoApagaUsuario){
 
               echo'
               <option value="0">Apoiador</option>

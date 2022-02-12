@@ -50,7 +50,8 @@ if ($_SESSION['tipoUsuario'] != $tipoUsuario || !isset($_SESSION['idAdminApoiado
             </a>
 
           <?php
-            if($this->dados2[$i]['email']!='admin@admin.com'){
+          $naoApagaUsuario = 1;
+            if($this->dados2[$i]['idAdminApoiado']!=$naoApagaUsuario ){
 
             
             ?>
