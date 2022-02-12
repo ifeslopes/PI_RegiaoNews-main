@@ -1,7 +1,7 @@
-<section class=" py-3 bg-light text-center">
+<section class=" py-3 bg-light  text-center">
   <div class="container">
     <div class="my-9">
-      <span class="h6 d-block  bg-dark col-7 rounded mx-auto d-block font-weight-ligh 
+      <span class="h6 d-block  bg-dark  rounded mx-auto d-block font-weight-ligh 
         text-white  bgimagem ">
         <p class=" espelho2">SOBRE: Região News é um projeto com fins didáticos
         sem fins comerciais. Esse projeto se trata de um trabalho
@@ -12,7 +12,7 @@
 
         </p>
 
-        <section class="container  espelho2">
+        <section class="container col-md-12 espelho2">
           <div class="my-5 text-center">
 
             <h3 class="display-5 text-primary ">Algumas Funcionalidades Do Sistemas </h3>

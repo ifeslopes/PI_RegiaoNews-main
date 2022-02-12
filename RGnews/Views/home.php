@@ -1,6 +1,6 @@
   <section coass="conteiner-fluid ">
     <div class="row bg-dark text-white bgimagem">
-      <div class="col-sm-7 p-0">
+      <div class="col-md-7 p-0">
 
         <div id="carouselCidade" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
