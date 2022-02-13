@@ -1,11 +1,11 @@
 /* Exclui a base de dados company caso já exista: */
-DROP DATABASE IF EXISTS regiaonews1;
+DROP DATABASE IF EXISTS regiaonews;
 
 /* Cria a base de dados company */
-CREATE DATABASE regiaonews1;
+CREATE DATABASE regiaonews;
 
 /*Utiliza a base de dados criada */ 
-USE regiaonews1;
+USE regiaonews;
 
 CREATE TABLE `adminApoiado` (
   `idAdminApoiado` int(11) NOT NULL,
