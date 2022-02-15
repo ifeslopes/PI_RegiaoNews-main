@@ -18,7 +18,7 @@
               </a>
             </div>
             <div class="carousel-item">
-                <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[3]['idnoticias'];?>">
+                <a href="<?php echo '/PI_RegiaoNews-main/RGnews/noticias/news/'. $this->dados2[1]['idnoticias'];?>">
               <img  style=" width:600px; height:400px" class="d-block w-100" src=" /PI_RegiaoNews-main/RGnews/Media/<? echo $this->dados2[1]['fotont'];?>" alt="<? echo $this->dados2[1]['titulo'];?>">
               <div class="carousel-caption p-3 mb-2 espelho">
                 <h4 clas="display-4"><? echo $this->dados2[1]['titulo'];?></h4>
